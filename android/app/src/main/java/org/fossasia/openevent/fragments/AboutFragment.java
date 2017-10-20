@@ -238,7 +238,7 @@ public class AboutFragment extends BaseFragment {
         TextView holder = (TextView) dialogView.findViewById(R.id.holder_textview);
         TextView licence = (TextView) dialogView.findViewById(R.id.licence);
         TextView licenceurl = (TextView) dialogView.findViewById(R.id.licence_url);
-        if(event.isValid() && event.getEventCopyright().isValid()) {
+        if (event.isValid() && event.getEventCopyright().isValid()) {
             Copyright copyright = event.getEventCopyright();
             licence.setText(copyright.getLicence() + " " + String.valueOf(copyright.getYear()));
             holder.setText(copyright.getHolder());
@@ -247,7 +247,7 @@ public class AboutFragment extends BaseFragment {
             licenceurl.setOnClickListener(view -> Utils.setUpCustomTab(getContext(), copyright.getLicenceUrl()));
             AlertDialog alertDialog = dialogBuilder.create();
             alertDialog.show();
-        }else{
+        } else {
             Snackbar.make(getView(), R.string.info_not_available, Snackbar.LENGTH_SHORT).show();
         }
     }
